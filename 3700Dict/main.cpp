@@ -6,6 +6,8 @@
 
 sf::RenderWindow* Graphics::window;
 sf::Time Graphics::delta;
+sf::Text  Graphics::text;
+
 
 void sortBackground(Sorter* sorter)
 {
@@ -26,15 +28,14 @@ int main()
 	//Utils / Graphics
 	sf::Clock deltaClock;
 	sf::Font font;
-	sf::Text text;
-	sf::RectangleShape rect;
-	
 	font.loadFromFile("FreeSans.ttf");
-	text.setFont(font);
-	text.setCharacterSize(16);
+	Graphics::text.setFont(font);
+	Graphics::text.setCharacterSize(24);
 
 	BubbleSort bSort = BubbleSort();
-	Sorter* currentSorter = &bSort; //Reference to current selected sorting algorithm, defaults to bubble sort
+	InsertionSort sSort = InsertionSort();
+
+	Sorter* currentSorter = &bSort; //Reference to current selected algorithm, defaults to bubble sort
 
 
 	//Main Loop
@@ -56,7 +57,10 @@ int main()
 		ImGui::Begin("Algorithms"); 
 		if (ImGui::Button("Bubble Sort")) {
 			currentSorter = &bSort;
-
+		}
+		if (ImGui::Button("Insertion Sort"))
+		{
+			currentSorter = &sSort;
 		}
 		ImGui::End(); 
 
@@ -66,7 +70,7 @@ int main()
 		ImGui::Begin("Actions");
 	
 		if (ImGui::Button("Randomize")) {
-			currentSorter->sort();
+			currentSorter->randomize();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Sort")) {
