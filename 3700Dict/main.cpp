@@ -14,7 +14,6 @@ void sortBackground(Sorter* sorter)
 	sorter->sort();
 }
 
-
 int main()
 {
 	//Init Window

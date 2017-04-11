@@ -13,16 +13,12 @@
 #define X_RES 1280
 #define Y_RES 720
 
-
 class Graphics {
 public :
 	static sf::RenderWindow* window;
 	static sf::Time delta; //delta frame time
 	static sf::Text text;
 };
-
-
-
 
 struct dataContainer
 {
@@ -40,20 +36,23 @@ public:
 	~Sorter() {}
 	dataContainer data[DATA_SIZE];	
 	int tracerValue;
-	virtual void draw();
-	virtual void sort() {}
 	void randomize();
 	void printArray();
+	virtual void draw();
+	virtual void sort() {}
+	std::string name; //name for visual drawing
 };
 
 class BubbleSort : public Sorter
 {
 public :
 	void sort() override;
+	BubbleSort() { name = std::string("Bubble Sort"); Sorter::Sorter(); }
 };
 
 class InsertionSort : public Sorter
 {
 public:
 	void sort() override;
+	InsertionSort() { name = std::string("Insertion Sort"); Sorter::Sorter(); }
 };

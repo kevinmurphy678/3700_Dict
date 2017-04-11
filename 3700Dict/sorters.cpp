@@ -34,9 +34,13 @@ void Sorter::randomize()
 	}
 }
 
-
 void Sorter::draw()
 {
+	//Draw current sorting algorithm name in middle of screen
+	Graphics::text.setString(name);
+	Graphics::text.setPosition(X_RES/2 - Graphics::text.getGlobalBounds().width / 2, Y_RES / 2 - 128);
+	Graphics::window->draw(Graphics::text);
+
 	sf::RectangleShape rect;
 	for (int i = 0; i < DATA_SIZE; i++)
 	{
@@ -105,6 +109,9 @@ void BubbleSort::sort()
 //Insertion Sort
 void InsertionSort::sort()
 {
+	std::cout << "Array: ";
+	printArray();
+
 	int i, j, temp;
 	for (i = 1; i < DATA_SIZE; i++)
 	{
@@ -127,4 +134,7 @@ void InsertionSort::sort()
 
 		Sleep(25);
 	}
+
+	std::cout << "Sorted: ";
+	printArray();
 }
