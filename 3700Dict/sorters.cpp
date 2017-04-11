@@ -44,17 +44,17 @@ void Sorter::draw()
 	sf::RectangleShape rect;
 	for (int i = 0; i < DATA_SIZE; i++)
 	{
-		if (data[i].recentSwap == 1)
+		if (data[i].recentSwap == 1)//Set recent swaps to display as green
 			rect.setFillColor(sf::Color(0, 255, 0, 255));
 		else if (data[i].recentSwap == 0)
 			rect.setFillColor(sf::Color(i % 2 == 0 ? 255 : 150, 0, 0, 255));
 
 		rect.setPosition(i * BAR_WIDTH, Y_RES - 64);
-		rect.setSize(sf::Vector2f(BAR_WIDTH, -data[i].value * 256 / 1024));
+		rect.setSize(sf::Vector2f(BAR_WIDTH, -data[i].value * 256 / 1024)); //Draw bars to represent array data value
 		Graphics::window->draw(rect);
 
 		if (data[i].timer > 0)
-			data[i].timer -= Graphics::delta.asSeconds();
+			data[i].timer -= Graphics::delta.asSeconds();//Decrease timer
 		else
 			data[i].recentSwap = 0;
 

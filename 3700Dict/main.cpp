@@ -14,6 +14,8 @@ void sortBackground(Sorter* sorter)
 	sorter->sort();
 }
 
+
+
 int main()
 {
 	//Init Window
@@ -31,11 +33,12 @@ int main()
 	Graphics::text.setFont(font);
 	Graphics::text.setCharacterSize(24);
 
+	//Sorting algorithm objects
 	BubbleSort bSort = BubbleSort();
 	InsertionSort sSort = InsertionSort();
 
-	Sorter* currentSorter = &bSort; //Reference to current selected algorithm, defaults to bubble sort
-
+	//Reference to current selected algorithm, defaults to bubble sort
+	Sorter* currentSorter = &bSort; 
 
 	//Main Loop
 	while (Graphics::window->isOpen()) {
@@ -51,7 +54,6 @@ int main()
 		Graphics::delta = deltaClock.restart();
 		ImGui::SFML::Update(*Graphics::window, Graphics::delta);
 
-
 		//Algorithm Selector
 		ImGui::Begin("Algorithms"); 
 		if (ImGui::Button("Bubble Sort")) {
@@ -63,16 +65,14 @@ int main()
 		}
 		ImGui::End(); 
 
-
-		//Algorithm Actions
-		
-		ImGui::Begin("Actions");
-	
+		//Algorithm Actions	
+		ImGui::Begin("Actions");	
 		if (ImGui::Button("Randomize")) {
 			currentSorter->randomize();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Sort")) {
+			//Start sorting the array in a new thread
 			std::thread t(sortBackground, currentSorter);
 			t.detach();		
 		}
