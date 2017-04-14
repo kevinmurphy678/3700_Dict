@@ -9,11 +9,11 @@
 #include <Windows.h>
 
 
-#define DATA_SIZE 20		//Data/Array size
+//#define DATA_SIZE 20		//Data/Array size
 #define X_RES 1280			//X resolution in pixels	
 #define Y_RES 720			//Y resolution in pixels
 
-#define BAR_WIDTH 64		//Visual bar width (in pixels) for displaying visual array
+//#define BAR_WIDTH 64		//Visual bar width (in pixels) for displaying visual array
 #define NUMBER_SCALE 512	//Scale of random numbers to generate
 
 class Graphics {
@@ -26,6 +26,7 @@ public :
 class Settings {
 public:
 	static float sleepTime;
+	static int dataSize;
 };
 
 
@@ -44,9 +45,9 @@ class Sorter
 public: 
 	Sorter();
 	~Sorter() {}
-	dataContainer data[DATA_SIZE];	
+	dataContainer* data;	
 	int tracerValue;
-	void randomize();
+	void initiate();
 	void printArray();
 	virtual void draw();
 	virtual void sort() {}

@@ -8,7 +8,7 @@ sf::RenderWindow* Graphics::window;
 sf::Time Graphics::delta;
 sf::Text  Graphics::text;
 float Settings::sleepTime = 50; //Default sleep value of 50 MS
-
+int Settings::dataSize = 20;    //Default array size
 
 void sortBackground(Sorter* sorter)
 {
@@ -56,10 +56,12 @@ int main()
 		//Algorithm Selector
 		ImGui::Begin("Algorithms"); 
 		if (ImGui::Button("Bubble Sort")) {
+			bSort.initiate();
 			currentSorter = &bSort;
 		}
 		if (ImGui::Button("Insertion Sort"))
 		{
+			sSort.initiate();
 			currentSorter = &sSort;
 		}
 		ImGui::End(); 
@@ -67,7 +69,7 @@ int main()
 		//Algorithm Actions	
 		ImGui::Begin("Actions");	
 		if (ImGui::Button("Randomize")) {
-			currentSorter->randomize();
+			currentSorter->initiate();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Sort")) {
@@ -77,6 +79,10 @@ int main()
 		}
 
 		ImGui::SliderFloat("Delay(ms)", &Settings::sleepTime, 0, 250);
+		if (ImGui::SliderInt("Data Size", &Settings::dataSize, 8, 128))
+		{
+			currentSorter->initiate();
+		}
 
 		ImGui::End();
 
