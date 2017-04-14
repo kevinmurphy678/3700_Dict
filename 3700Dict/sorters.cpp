@@ -1,8 +1,9 @@
 #include "sorter.h"
 #include <iostream>
+#include <random>
 
-#define BAR_WIDTH 64
 
+//Swap two numbers
 void swap(int* num1, int* num2)
 {
 	int tmp = *num2;
@@ -10,28 +11,30 @@ void swap(int* num1, int* num2)
 	*num1 = tmp;
 }
 
+//Simple method to print the array
 void Sorter::printArray()
 {
 	for (int i = 0; i < DATA_SIZE; i++)
-	{
 		std::cout << data[i].value << " ";
-	}
-
+	
 	std::cout << "\n";
 }
 
 Sorter::Sorter()
 {
-	//Initialize array with random numbers for sorting
-	randomize();
+	randomize(); //Initialize array with random numbers for sorting
 }
 
+//Populate array with random numbers, scaling them with the max number scale
 void Sorter::randomize()
-{
+{	
+	//Compliant solution for generating random nubmers, better than std::rand()
+	//https://www.securecoding.cert.org/confluence/display/cplusplus/MSC50-CPP.+Do+not+use+std%3A%3Arand%28%29+for+generating+pseudorandom+numbers
+	std::uniform_int_distribution<int> dist (0, NUMBER_SCALE);
+	std::random_device rd;
+	std::mt19937 engine(rd());
 	for (int i = 0; i < DATA_SIZE; i++)
-	{
-		data[i].value = std::rand() % 1024;
-	}
+		data[i].value = dist(engine);
 }
 
 void Sorter::draw()
@@ -45,16 +48,16 @@ void Sorter::draw()
 	for (int i = 0; i < DATA_SIZE; i++)
 	{
 		if (data[i].recentSwap == 1)//Set recent swaps to display as green
-			rect.setFillColor(sf::Color(0, 255, 0, 255));
+			rect.setFillColor(sf::Color(0, i % 2 == 0 ? 255 : 150, 0, 255));
 		else if (data[i].recentSwap == 0)
 			rect.setFillColor(sf::Color(i % 2 == 0 ? 255 : 150, 0, 0, 255));
 
 		rect.setPosition(i * BAR_WIDTH, Y_RES - 64);
-		rect.setSize(sf::Vector2f(BAR_WIDTH, -data[i].value * 256 / 1024)); //Draw bars to represent array data value
+		rect.setSize(sf::Vector2f(BAR_WIDTH, -data[i].value * (Y_RES / 2) / NUMBER_SCALE)); //Draw rectangles to represent array data value and scale the rectangles properly to fit the screen..
 		Graphics::window->draw(rect);
 
 		if (data[i].timer > 0)
-			data[i].timer -= Graphics::delta.asSeconds();//Decrease timer
+			data[i].timer -= Graphics::delta.asMilliseconds();//Decrease timer in miliseconds because the sleep delay is in ms
 		else
 			data[i].recentSwap = 0;
 
@@ -91,13 +94,13 @@ void BubbleSort::sort()
 				//Update to display recently swapped values as green
 				data[j].recentSwap = 1;
 				data[j + 1].recentSwap = 1;
-				data[j].timer = 0.024f;
-				data[j + 1].timer = 0.024f;	
+				data[j].timer = Settings::sleepTime;
+				data[j + 1].timer = Settings::sleepTime;
 			}
 
 			tracerValue = j; //update current visual index
 
-			Sleep(25);
+			Sleep(Settings::sleepTime);
 		}
 	}
 
@@ -121,18 +124,21 @@ void InsertionSort::sort()
 			temp = data[j].value;
 			data[j].value = data[j - 1].value;
 			data[j - 1].value = temp;
+			
+			//Update to display recently swapped values as green
+			data[j].timer = Settings::sleepTime;
+			data[j].recentSwap = 1;		
+			data[j - 1].timer = Settings::sleepTime;
+			data[j-1].recentSwap = 1;
+			Sleep(Settings::sleepTime);
+
+
 			j--;
-			Sleep(25);
-
-
-			data[j].timer = 0.024f;
-			data[j].recentSwap = 1;
-		
 		}
 
 		tracerValue = i;
 
-		Sleep(25);
+		Sleep(Settings::sleepTime);
 	}
 
 	std::cout << "Sorted: ";

@@ -9,9 +9,12 @@
 #include <Windows.h>
 
 
-#define DATA_SIZE 20
-#define X_RES 1280
-#define Y_RES 720
+#define DATA_SIZE 20		//Data/Array size
+#define X_RES 1280			//X resolution in pixels	
+#define Y_RES 720			//Y resolution in pixels
+
+#define BAR_WIDTH 64		//Visual bar width (in pixels) for displaying visual array
+#define NUMBER_SCALE 512	//Scale of random numbers to generate
 
 class Graphics {
 public :
@@ -20,6 +23,13 @@ public :
 	static sf::Text text;
 };
 
+class Settings {
+public:
+	static float sleepTime;
+};
+
+
+
 struct dataContainer
 {
 	int value; 
@@ -27,7 +37,7 @@ struct dataContainer
 	float timer;
 };
 
-//Base sorting class
+//Base sorting / algorithm class
 class Sorter
 {
 	
@@ -47,12 +57,23 @@ class BubbleSort : public Sorter
 {
 public :
 	void sort() override;
-	BubbleSort() { name = std::string("Bubble Sort"); Sorter::Sorter(); }
+	BubbleSort() { name = "Bubble Sort"; Sorter(); }
 };
 
 class InsertionSort : public Sorter
 {
 public:
 	void sort() override;
-	InsertionSort() { name = std::string("Insertion Sort"); Sorter::Sorter(); }
+	InsertionSort() { name = "Insertion Sort"; Sorter(); }
+};
+
+
+//Dijkstra's algorithm
+class Dijkstra : public Sorter
+{
+public:
+	void sort() override;
+	void draw() override;
+	Dijkstra() { name = "Dijkstra"; }
+
 };

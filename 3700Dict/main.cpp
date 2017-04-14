@@ -7,14 +7,13 @@
 sf::RenderWindow* Graphics::window;
 sf::Time Graphics::delta;
 sf::Text  Graphics::text;
+float Settings::sleepTime = 50; //Default sleep value of 50 MS
 
 
 void sortBackground(Sorter* sorter)
 {
 	sorter->sort();
 }
-
-
 
 int main()
 {
@@ -76,6 +75,9 @@ int main()
 			std::thread t(sortBackground, currentSorter);
 			t.detach();		
 		}
+
+		ImGui::SliderFloat("Delay(ms)", &Settings::sleepTime, 0, 250);
+
 		ImGui::End();
 
 		Graphics::window->clear(sf::Color(55,65,74,255));
