@@ -7,7 +7,7 @@
 sf::RenderWindow* Graphics::window;
 sf::Time Graphics::delta;
 sf::Text  Graphics::text;
-float Settings::sleepTime = 50; //Default sleep value of 50 MS
+float Settings::sleepTime = 0.5f; 
 int Settings::dataSize = 20;    //Default array size
 
 void sortBackground(Sorter* sorter)
@@ -78,7 +78,7 @@ int main()
 			t.detach();		
 		}
 
-		ImGui::SliderFloat("Delay(ms)", &Settings::sleepTime, 0, 250);
+		ImGui::SliderFloat("Delay", &Settings::sleepTime, 0.f, 2.f);
 		if (ImGui::SliderInt("Data Size", &Settings::dataSize, 8, 128))
 		{
 			currentSorter->initiate();

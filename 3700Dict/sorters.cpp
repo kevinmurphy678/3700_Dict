@@ -1,6 +1,10 @@
 #include "sorter.h"
 #include <iostream>
 #include <random>
+#include <math.h>
+
+//Calculate sleep time, scaled with data size
+#define SLEEP_TIME std::max(1.f, Settings::sleepTime / (float)Settings::dataSize * 1000.f) 
 
 
 //Swap two numbers
@@ -43,7 +47,7 @@ void Sorter::initiate()
 
 void Sorter::draw()
 {
-	const int BAR_WIDTH = X_RES / Settings::dataSize;
+	const float BAR_WIDTH = (X_RES / Settings::dataSize);
 	//Draw current sorting algorithm name in middle of screen
 	Graphics::text.setString(name);
 	Graphics::text.setPosition(X_RES/2 - Graphics::text.getGlobalBounds().width / 2, Y_RES / 2 - 128);
@@ -102,13 +106,13 @@ void BubbleSort::sort()
 				//Update to display recently swapped values as green
 				data[j].recentSwap = 1;
 				data[j + 1].recentSwap = 1;
-				data[j].timer = Settings::sleepTime;
-				data[j + 1].timer = Settings::sleepTime;
+				data[j].timer = SLEEP_TIME;
+				data[j + 1].timer = SLEEP_TIME;
 			}
 
 			tracerValue = j; //update current visual index
 
-			Sleep(Settings::sleepTime);
+			Sleep(SLEEP_TIME);
 		}
 	}
 
@@ -134,11 +138,11 @@ void InsertionSort::sort()
 			data[j - 1].value = temp;
 			
 			//Update to display recently swapped values as green
-			data[j].timer = Settings::sleepTime;
+			data[j].timer = SLEEP_TIME;
 			data[j].recentSwap = 1;		
-			data[j - 1].timer = Settings::sleepTime;
+			data[j - 1].timer = SLEEP_TIME;
 			data[j-1].recentSwap = 1;
-			Sleep(Settings::sleepTime);
+			Sleep(SLEEP_TIME);
 
 
 			j--;
@@ -146,7 +150,7 @@ void InsertionSort::sort()
 
 		tracerValue = i;
 
-		Sleep(Settings::sleepTime);
+		Sleep(SLEEP_TIME);
 	}
 
 	std::cout << "Sorted: ";
