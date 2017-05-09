@@ -23,11 +23,24 @@ while (swapped)
 }
 ```
 * ##### Insertion Sort
-
+```c
+int i, j, temp;
+for (i = 1; i < size; i++)
+{
+	j = i;
+	while (j > 0 && data[j] <  data[j - 1])
+	{
+		temp = data[j];
+		data[j] = data[j - 1];
+		data[j - 1] = temp;
+		j--;
+	}
+}
+```
 
 ### <a name = "other"></a> Other Algorithms
 
-### <a name = "computation"></a> Theory of computation
+### <a name = "computation"></a> Theory of computationlo
 
 ### <a name = "complexity"></a> Complexity
 
