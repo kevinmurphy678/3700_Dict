@@ -7,6 +7,21 @@
 
 ### <a name = "sorting"></a> Sorting Algorithms
 * ##### Bubble Sort
+```c	
+int swapped = 1;	
+while (swapped)
+{
+	swapped = 0;
+	for (int j = 0; j < size - 1; j++)
+	{
+		if (data[j] > data[j + 1])
+		{
+			swap(&data[j], &data[j + 1]);
+			swapped = 1;
+		}
+	}
+}
+```
 * ##### Insertion Sort
 
 
