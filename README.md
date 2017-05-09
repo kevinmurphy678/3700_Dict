@@ -40,7 +40,7 @@ for (i = 1; i < size; i++)
 
 ### <a name = "other"></a> Other Algorithms
 
-### <a name = "computation"></a> Theory of computationlo
+### <a name = "computation"></a> Theory of computation
 
 ### <a name = "complexity"></a> Complexity
 
@@ -58,4 +58,4 @@ for (i = 1; i < size; i++)
 ### <a name = "encryption"></a> Encryption
 
 * #### RSA
-[RSA key generation and signature verification](https://github.com/kevinmurphy678/3700_Dict/blob/master/RSA.md)
+	- [RSA key generation and signature verification](https://github.com/kevinmurphy678/3700_Dict/blob/master/RSA.md)
