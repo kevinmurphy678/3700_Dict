@@ -22,6 +22,8 @@ while (swapped)
 	}
 }
 ```
+Visualization:
+![Bubble Sort](https://files.catbox.moe/bvwejh.gif)
 * ##### Insertion Sort
 ```c
 int i, j, temp;
@@ -37,6 +39,8 @@ for (i = 1; i < size; i++)
 	}
 }
 ```
+Visualization:
+![Insertion Sort](https://files.catbox.moe/xf8cjs.gif)
 
 ### <a name = "other"></a> Other Algorithms
 
