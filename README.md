@@ -44,6 +44,26 @@ Visualization:
 
 ### <a name = "other"></a> Other Algorithms
 
+* ##### Binary Search Tree
+
+![Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
+
+Explanation: A binary search consists of nodes with left and right children. For a binary search tree to be valid: a parent's left node value must be less than itself and its right node value must be greater than itself.
+
+Binary search tree code:
+
+
+* [Finding Minimum](https://github.com/kevinmurphy678/3700_Dict/blob/master/BST/main.c#L104)
+
+* [Finding Maximum](https://github.com/kevinmurphy678/3700_Dict/blob/master/BST/main.c#L95)
+
+* [Printing in order](https://github.com/kevinmurphy678/3700_Dict/blob/master/BST/main.c#L121)
+
+
+
+
+
+
 ### <a name = "computation"></a> Theory of computation
 
 ### <a name = "complexity"></a> Complexity
