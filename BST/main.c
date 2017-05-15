@@ -91,7 +91,7 @@ void insert_node(NodePointer root)
         temp1->right = temp;
 }
 
-
+//Find maximum number by continuing down the binary search tree to every right node. The most right node will be the maximum number.
 int findMax(NodePointer x)
 {
     if (x == NULL) return 0;
@@ -101,6 +101,7 @@ int findMax(NodePointer x)
     return x->value;
 }
 
+//Find minimum number by continuing down the binary search tree to every left node. The most left node will be the minimum number.
 int findMin(NodePointer x)
 {
     if (x == NULL) return 0;
@@ -109,6 +110,14 @@ int findMin(NodePointer x)
 
     return x->value;
 }
+
+//Print the binary search tree, in sorted order.
+//Steps:
+//1. Check if current node is not null
+//2. Go down the left subtree recursively by calling inorder_walk(x -> left)
+//3. Print the value
+//4. Go down the right subtree recurisvely by calling inorder_walk(x -> right)
+//The result is a printed in order list of the binary search tree
 void inorder_walk(NodePointer x)
 {
     if (x != NULL)
