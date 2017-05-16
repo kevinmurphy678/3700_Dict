@@ -4,6 +4,7 @@
 * [Theory of computation](#computation)
 * [Complexity](#complexity)
 * [Encryption](#encryption)
+* [Computational Problems](#problems)
 
 ### <a name = "sorting"></a> Sorting Algorithms
 * ##### Bubble Sort
@@ -171,3 +172,8 @@ S->0S0
 
 * #### RSA
 	- [RSA key generation and signature verification](https://github.com/kevinmurphy678/3700_Dict/blob/master/RSA.md)
+	
+	
+### <a name = "problems"></a>Computational Problems
+
+* [Manhattan problem](https://github.com/kevinmurphy678/3700_Dict/blob/master/Problems/Manhattanproblem.pdf)
