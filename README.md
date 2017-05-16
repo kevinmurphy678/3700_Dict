@@ -100,6 +100,23 @@ The minimum distance between the start and end node is:
 
 ### <a name = "computation"></a> Theory of computation
 
+* ##### Finite Automata
+A finite automata is a deterministic model that builds a string output defined by various states. A final state is represented by a double circle. The arrows represent a transition from one state to another, which will add the corresponding value to the output string.
+
+
+Example Finite Automata: Creates a string with any amount of 1's followed by one zero.
+
+
+![](https://files.catbox.moe/nwlbp3.png)
+
+
+* ##### Push Down Automata
+* ##### Turing Machine
+
+A turing machine is a model capable of solving any computational problem. It is more advanced than push down automota and finite automota models. 
+
+[View Turing Machine Examples](https://github.com/kevinmurphy678/3700_Dict/blob/master/Turing%20Machine/Turing%20Machine%20Examples.pdf)
+
 ### <a name = "complexity"></a> Complexity
 
 
