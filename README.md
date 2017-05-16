@@ -127,6 +127,33 @@ A turing machine is a model capable of solving any computational problem. It is 
 
 [View Turing Machine Examples](https://github.com/kevinmurphy678/3700_Dict/blob/master/Turing%20Machine/Turing%20Machine%20Examples.pdf)
 
+
+* ##### Context Free Grammar
+
+Context free grammar is a method used to generate strings by following a set of rules defined in the grammar. Examples:
+
+`````
+
+Generate n 0's followed by n+2 1's:
+
+S -> 0S1
+S -> 11
+
+
+Genrate n 0's followed by 2n+2 1's:
+
+S -> 0S11
+S -> 11
+
+Generate a palindrome:
+
+S->0
+S->1
+S->1S1
+S->0S0
+
+`````
+
 ### <a name = "complexity"></a> Complexity
 
 
