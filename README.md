@@ -111,6 +111,16 @@ Example Finite Automata: Creates a string with any amount of 1's followed by one
 
 
 * ##### Push Down Automata
+
+Push down automata is a more advanced version of finite automata which introduces the concept of a stack. Values can be pushed and pulled from the stack. The stack acts as memory and allows more complex outputs than finite state automata. A push down automata cannot be accepted until the stack is empty.
+
+Example of a palindrome building PDA:
+
+![](https://files.catbox.moe/4ikkq9.png)
+
+
+
+
 * ##### Turing Machine
 
 A turing machine is a model capable of solving any computational problem. It is more advanced than push down automota and finite automota models. 
