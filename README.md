@@ -177,3 +177,4 @@ S->0S0
 ### <a name = "problems"></a>Computational Problems
 
 * [Manhattan problem](https://github.com/kevinmurphy678/3700_Dict/blob/master/Problems/Manhattanproblem.pdf)
+* [Longest common sub sequence](https://github.com/kevinmurphy678/3700_Dict/blob/master/Problems/Longestcommonsubsequence.pdf)
