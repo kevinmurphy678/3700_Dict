@@ -170,8 +170,8 @@ S->0S0
 
 ### <a name = "encryption"></a> Encryption
 
-* #### RSA
-	- [RSA key generation and signature verification](https://github.com/kevinmurphy678/3700_Dict/blob/master/RSA.md)
+* [RSA key generation and signature verification](https://github.com/kevinmurphy678/3700_Dict/blob/master/RSA.md)
+* [Diffie-Hellman shared secret](https://github.com/kevinmurphy678/3700_Dict/blob/master/Diffie-Hellman.txt)
 	
 	
 ### <a name = "problems"></a>Computational Problems
