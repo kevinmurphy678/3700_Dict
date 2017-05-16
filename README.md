@@ -50,7 +50,7 @@ Visualization:
 
 Explanation: A binary search consists of nodes with left and right children. For a binary search tree to be valid: a parent's left node value must be less than itself and its right node value must be greater than itself.
 
-Binary search tree code:
+Binary search tree code with explanations:
 
 
 * [Finding Minimum](https://github.com/kevinmurphy678/3700_Dict/blob/master/BST/main.c#L104)
@@ -59,9 +59,43 @@ Binary search tree code:
 
 * [Printing in order](https://github.com/kevinmurphy678/3700_Dict/blob/master/BST/main.c#L121)
 
+----
 
 
+* ##### Dijkstras Algorithm
+Explanation: Dijkstras algorithm is used to find the shortest path from one node to another. Consider the following graph:
+![Dijkstra Graph](https://files.catbox.moe/yi30on.png)
+With Dijkstra's algorithm it is possible to find the shortest given a start node and destination node. 
 
+A matrix can be  constructed with the distances to use in the algorithm:
+
+![](https://files.catbox.moe/fgxu66.png)
+
+Dijkstra's algorithm makes use of three arrays:
+Distance, Allowed, and Previous
+
+
+Distance: The distance required to get to a node.
+
+Allowed: Whether or not the shortest path to this node is known
+
+Previous: Stores the previous node value, to calculate the shortest path in the end
+
+
+Explanation: Pick a node to start at and then travel to all ajacent nodes updating the distance array. If the new distance is less than the current distance, update the array and set the previous value to the node you traveled from. When all paths to a node are calculated set the allowed array value to 1.
+
+Below are the final array values for traveling from A to C. The shortest path is A->D->C for a total distance of 8.
+```
+The pre array is
+0 0 3 0 2 3
+The distance array is
+0 5 8 4 9 10
+The allowed array is
+1 1 1 1 1 1
+The minimum distance between the start and end node is:
+0->3->2
+```
+[View C Code](https://github.com/kevinmurphy678/3700_Dict/tree/master/DIJKSTRA)
 
 
 ### <a name = "computation"></a> Theory of computation
