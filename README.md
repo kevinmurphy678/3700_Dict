@@ -108,7 +108,7 @@ Example Finite Automata: Creates a string with any amount of 1's followed by one
 
 
 ![](https://files.catbox.moe/nwlbp3.png)
-
+----
 
 * ##### Push Down Automata
 
@@ -119,7 +119,7 @@ Example of a palindrome building PDA:
 ![](https://files.catbox.moe/4ikkq9.png)
 
 
-
+----
 
 * ##### Turing Machine
 
