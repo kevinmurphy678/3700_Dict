@@ -1,0 +1,36 @@
+Diffie Hellman key generation and exchange
+
+
+Both parties chose:
+
+Pick prime number, p: 17
+Pick base, g: 4
+
+
+Alice:
+Pick secret a: 3
+
+Compute A: A = g^a mod p
+	        A = 4^3 mod 17
+	        A = 13
+
+
+
+Bob:
+Pick secret b: 8
+Compute B = g^b mod p
+                B = 4^8 mod 17
+                B = 1
+
+Alice and bob send each other A and B.
+
+Verifying shared secret:
+
+S = B^a mod p
+S = 1^3 mod 17
+S = 1
+------
+S = A^b mod p
+S = 13^8 mod 17
+S = 1
+
