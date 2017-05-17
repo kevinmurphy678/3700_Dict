@@ -142,7 +142,7 @@ Example of a palindrome building PDA:
 
 * #### Turing Machine
 
-A turing machine is a model capable of solving any computational problem. It is more advanced than push down automata and finite automota models. 
+A turing machine is a model capable of solving any computational problem given an algorithm. It is more advanced than push down automata and finite automota models. 
 
 [View Turing Machine Examples](https://github.com/kevinmurphy678/3700_Dict/blob/master/Turing%20Machine/Turing%20Machine%20Examples.pdf)
 
