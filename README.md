@@ -8,6 +8,7 @@
 
 ### <a name = "sorting"></a> Sorting Algorithms
 * ##### Bubble Sort
+Bubble sort repeatedly goes through the array and checks the current value against the adjacent value. If the current value is less than the adjacent(right) value, then it swaps the two values. The algorithm repeats until the array is sorted.
 ```c	
 int swapped = 1;	
 while (swapped)
@@ -25,7 +26,9 @@ while (swapped)
 ```
 Visualization:
 ![Bubble Sort](https://files.catbox.moe/bvwejh.gif)
+
 * ##### Insertion Sort
+Insertion sort works by iterating over the array and building a sorted output list. Each iteration, an element is removed from the input list and is inserted into the output list in the location that it belongs.
 ```c
 int i, j, temp;
 for (i = 1; i < size; i++)
@@ -42,6 +45,24 @@ for (i = 1; i < size; i++)
 ```
 Visualization:
 ![Insertion Sort](https://files.catbox.moe/xf8cjs.gif)
+
+
+* ##### Quick Sort
+Quick sort is a divide and conquer algorithm and relies on recursion.
+
+Steps to quick sort:
+* Pick an element from the array, known as a pivot
+* Re-partition the array so all elements with a value less than the pivot come before it, and all elements with a value greater than the pivot comes after it. This creates two new 'sub-arrays' with low values and high values.
+* Repeat the partition process recursively for the new sub arrays
+
+```
+
+```
+
+Visualization:
+![Quick sort](https://files.catbox.moe/msysoi.gif)
+
+
 
 ### <a name = "other"></a> Other Algorithms
 
