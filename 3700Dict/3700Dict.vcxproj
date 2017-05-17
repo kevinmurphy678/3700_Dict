@@ -149,7 +149,6 @@
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="something.c" />
     <ClCompile Include="sorters.cpp" />
   </ItemGroup>
   <ItemGroup>

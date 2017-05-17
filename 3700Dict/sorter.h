@@ -76,25 +76,3 @@ public:
 	void sort() override;
 	QuickSort() {name = "Quick Sort"; Sorter();}
 };
-
-
-
-//
-////Dijkstra's algorithm
-//class Dijkstra : public Sorter
-//{
-//public:
-//	int nodeSize = 15;
-//	struct Node {
-//		float x, y; //Positions
-//	};
-//	Node* nodes;
-//
-//
-//	void sort() override;
-//	void draw() override;
-//	void initiate() override;
-//	int Dijkstra::findFirstNeighbor(Node node);
-//
-//	Dijkstra() { name = "Dijkstra"; }
-//};
