@@ -7,7 +7,7 @@
 * [Computational Problems](#problems)
 
 ### <a name = "sorting"></a> Sorting Algorithms
-* ##### Bubble Sort
+* #### Bubble Sort
 Bubble sort repeatedly goes through the array and checks the current value against the adjacent value. If the current value is less than the adjacent(right) value, then it swaps the two values. The algorithm repeats until the array is sorted.
 ```c	
 int swapped = 1;	
@@ -27,7 +27,7 @@ while (swapped)
 Visualization:
 ![Bubble Sort](https://files.catbox.moe/bvwejh.gif)
 
-* ##### Insertion Sort
+* #### Insertion Sort
 Insertion sort works by iterating over the array and building a sorted output list. Each iteration, an element is removed from the input list and is inserted into the output list in the location that it belongs.
 ```c
 int i, j, temp;
@@ -47,7 +47,7 @@ Visualization:
 ![Insertion Sort](https://files.catbox.moe/xf8cjs.gif)
 
 
-* ##### Quick Sort
+* #### Quick Sort
 Quick sort is a divide and conquer algorithm and relies on recursion.
 
 Steps to quick sort:
@@ -55,9 +55,6 @@ Steps to quick sort:
 * Re-partition the array so all elements with a value less than the pivot come before it, and all elements with a value greater than the pivot comes after it. This creates two new 'sub-arrays' with low values and high values.
 * Repeat the partition process recursively for the new sub arrays
 
-```
-
-```
 
 Visualization:
 ![Quick sort](https://files.catbox.moe/msysoi.gif)
@@ -66,7 +63,7 @@ Visualization:
 
 ### <a name = "other"></a> Other Algorithms
 
-* ##### Binary Search Tree
+* #### Binary Search Tree
 
 ![Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
 
@@ -84,7 +81,7 @@ Binary search tree code with explanations:
 ----
 
 
-* ##### Dijkstras Algorithm
+* #### Dijkstras Algorithm
 Explanation: Dijkstras algorithm is used to find the shortest path from one node to another. Consider the following graph:
 ![Dijkstra Graph](https://files.catbox.moe/yi30on.png)
 With Dijkstra's algorithm it is possible to find the shortest given a start node and destination node. 
@@ -122,7 +119,7 @@ The minimum distance between the start and end node is:
 
 ### <a name = "computation"></a> Theory of computation
 
-* ##### Finite Automata
+* #### Finite Automata
 A finite automata is a deterministic model that builds a string output defined by various states. A final state is represented by a double circle. The arrows represent a transition from one state to another, which will add the corresponding value to the output string.
 
 
@@ -132,7 +129,7 @@ Example Finite Automata: Creates a string with any amount of 1's followed by one
 ![](https://files.catbox.moe/nwlbp3.png)
 ----
 
-* ##### Push Down Automata
+* #### Push Down Automata
 
 Push down automata is a more advanced version of finite automata which introduces the concept of a stack. Values can be pushed and pulled from the stack. The stack acts as memory and allows more complex outputs than finite state automata. A push down automata cannot be accepted until the stack is empty.
 
@@ -143,14 +140,14 @@ Example of a palindrome building PDA:
 
 ----
 
-* ##### Turing Machine
+* #### Turing Machine
 
 A turing machine is a model capable of solving any computational problem. It is more advanced than push down automota and finite automota models. 
 
 [View Turing Machine Examples](https://github.com/kevinmurphy678/3700_Dict/blob/master/Turing%20Machine/Turing%20Machine%20Examples.pdf)
 
 
-* ##### Context Free Grammar
+* #### Context Free Grammar
 
 Context free grammar is a method used to generate strings by following a set of rules defined in the grammar. Examples:
 
