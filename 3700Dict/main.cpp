@@ -35,6 +35,8 @@ int main()
 	//Sorting algorithm objects
 	BubbleSort bSort = BubbleSort();
 	InsertionSort sSort = InsertionSort();
+	QuickSort qSort = QuickSort();
+
 
 	//Reference to current selected algorithm, defaults to bubble sort
 	Sorter* currentSorter = &bSort; 
@@ -64,6 +66,13 @@ int main()
 			sSort.initiate();
 			currentSorter = &sSort;
 		}
+		if (ImGui::Button("Quick Sort"))
+		{
+			qSort.initiate();
+			currentSorter = &qSort;
+		}
+
+	
 		ImGui::End(); 
 
 		//Algorithm Actions	

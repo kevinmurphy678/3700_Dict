@@ -1,11 +1,12 @@
 #pragma once
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/System/Clock.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
-
+#include <math.h>
 #include <Windows.h>
 
 
@@ -47,7 +48,7 @@ public:
 	~Sorter() {}
 	dataContainer* data;	
 	int tracerValue;
-	void initiate();
+	virtual void initiate();
 	void printArray();
 	virtual void draw();
 	virtual void sort() {}
@@ -69,12 +70,31 @@ public:
 };
 
 
-//Dijkstra's algorithm
-class Dijkstra : public Sorter
+class QuickSort : public Sorter
 {
 public:
 	void sort() override;
-	void draw() override;
-	Dijkstra() { name = "Dijkstra"; }
-
+	QuickSort() {name = "Quick Sort"; Sorter();}
 };
+
+
+
+//
+////Dijkstra's algorithm
+//class Dijkstra : public Sorter
+//{
+//public:
+//	int nodeSize = 15;
+//	struct Node {
+//		float x, y; //Positions
+//	};
+//	Node* nodes;
+//
+//
+//	void sort() override;
+//	void draw() override;
+//	void initiate() override;
+//	int Dijkstra::findFirstNeighbor(Node node);
+//
+//	Dijkstra() { name = "Dijkstra"; }
+//};
